@@ -7,9 +7,9 @@ public class coin : MonoBehaviour
 {
     static public UnityEvent pickCoin = new UnityEvent();
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.collider.CompareTag("Player")){
+        if(other.gameObject.CompareTag("Player")){
         pickCoin.Invoke();
         Destroy(gameObject);
         }
